@@ -23,22 +23,7 @@
         </form>
 
         <hr>
-        
-        {% for todo in todo_list %} <!-- template tag -->
-        <div class="ui segment">
-            <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
-
-            {% if todo.complete == False %} <!-- template tag -->
-            <span class="ui gray label">Not Complete</span>
-            {% else %} <!-- template tag -->
-            <span class="ui green label">Completed</span>
-            {% endif %} <!-- template tag -->
-            
-            <!-- uses GET request, not best practice for updating/deleting -->
-            <a class="ui blue button" href="/update/{{ todo.id }}">Update</a> 
-            <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
-        </div>
-        {% endfor %} <!-- template tag -->
+        {% block content %}{% endblock %}
     </div>
 </body>
 
